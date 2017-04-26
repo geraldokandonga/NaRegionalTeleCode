@@ -95,6 +95,7 @@ public class RegionCodePicker extends RelativeLayout{
         holderView = mInflater.inflate(R.layout.layout_code_picker, this, true);
         textView_selectedRegion = (TextView) holderView.findViewById(R.id.textView_selectedRegion);
         holder = (RelativeLayout) holderView.findViewById(R.id.regionCodeHolder);
+        imageViewArrow = (ImageView) holderView.findViewById(R.id.imageView_arrow);
         linearFlagHolder = (LinearLayout) holderView.findViewById(R.id.linear_flag_holder);
         relativeClickConsumer = (RelativeLayout) holderView.findViewById(R.id.rlClickConsumer);
         codePicker = this;
