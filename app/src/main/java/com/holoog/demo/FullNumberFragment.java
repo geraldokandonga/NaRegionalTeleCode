@@ -86,12 +86,6 @@ public class FullNumberFragment extends Fragment {
             }
         });
 
-        buttonNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((MainActivity) getActivity()).viewPager.setCurrentItem(((MainActivity) getActivity()).viewPager.getCurrentItem() + 1);
-            }
-        });
     }
 
     private void registerCarrierEditText() {
@@ -113,6 +107,5 @@ public class FullNumberFragment extends Fragment {
         buttonGetNumberWithPlus=(Button)getView().findViewById(R.id.button_getFullNumberWithPlus);
         nrtcGetNumber=(RegionCodePicker)getView().findViewById(R.id.nrtc_getFullNumber);
 
-        buttonNext=(Button)getView().findViewById(R.id.button_next);
     }
 }

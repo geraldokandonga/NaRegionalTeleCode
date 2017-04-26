@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -93,7 +92,7 @@ import java.util.List;
         query = query.toLowerCase();
 
         //if query started from "0" ignore it
-        if (query.length() > 0 && query.charAt(0) == '0') {
+        if (query.length() > 0 && query.charAt(0) == '+') {
             query=query.substring(1);
         }
 
@@ -159,15 +158,12 @@ import java.util.List;
     class RegionCodeViewHolder extends RecyclerView.ViewHolder {
         LinearLayout relativeLayout_main;
         TextView textView_name, textView_code;
-        ImageView imageViewFlag;
-        LinearLayout linearFlagHolder;
         View divider;
         public RegionCodeViewHolder(View itemView) {
             super(itemView);
             relativeLayout_main = (LinearLayout) itemView;
             textView_name = (TextView) relativeLayout_main.findViewById(R.id.textView_countryName);
             textView_code = (TextView) relativeLayout_main.findViewById(R.id.textView_code);
-            linearFlagHolder = (LinearLayout) relativeLayout_main.findViewById(R.id.linear_flag_holder);
             divider = relativeLayout_main.findViewById(R.id.preferenceDivider);
         }
 
@@ -176,14 +172,12 @@ import java.util.List;
                 divider.setVisibility(View.GONE);
                 textView_name.setVisibility(View.VISIBLE);
                 textView_code.setVisibility(View.VISIBLE);
-                linearFlagHolder.setVisibility(View.VISIBLE);
                 textView_name.setText(region.getName() + " (" + region.getNameCode().toUpperCase() + ")");
                 textView_code.setText("+" + region.getPhoneCode());
             }else{
                 divider.setVisibility(View.VISIBLE);
                 textView_name.setVisibility(View.GONE);
                 textView_code.setVisibility(View.GONE);
-                linearFlagHolder.setVisibility(View.GONE);
             }
         }
 

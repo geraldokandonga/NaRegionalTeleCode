@@ -226,7 +226,7 @@ class Region {
         regions.add(new Region("kh", "61", "Khomas"));
         regions.add(new Region("hp", "63", "Hardap"));
         regions.add(new Region("kr", "63", "||Karas"));
-        regions.add(new Region("zz", "66", "Zambezi"));
+        regions.add(new Region("zi", "66", "Zambezi"));
         return regions;
     }
 

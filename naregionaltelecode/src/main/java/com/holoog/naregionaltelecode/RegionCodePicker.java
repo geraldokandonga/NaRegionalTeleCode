@@ -39,7 +39,6 @@ public class RegionCodePicker extends RelativeLayout{
     EditText editText_registeredCarrierNumber;
     RelativeLayout holder;
     ImageView imageViewArrow;
-    ImageView imageViewFlag;
     LinearLayout linearFlagHolder;
     Region selectedRegion;
     Region defaultRegion;
@@ -159,9 +158,6 @@ public class RegionCodePicker extends RelativeLayout{
                 setSelectedRegion(defaultRegion);
             }
 
-            //show flag
-            showFlag(a.getBoolean(R.styleable.RegionCodePicker_showFlag, true));
-
             //content color
             int contentColor;
             if (isInEditMode()) {
@@ -177,7 +173,6 @@ public class RegionCodePicker extends RelativeLayout{
             int textSize = a.getDimensionPixelSize(R.styleable.RegionCodePicker_textSize, 0);
             if (textSize > 0) {
                 textView_selectedRegion.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
-                setFlagSize(textSize);
                 setArrowSize(textSize);
             } else { //no text size specified
                 DisplayMetrics dm = context.getResources().getDisplayMetrics();
@@ -325,7 +320,7 @@ public class RegionCodePicker extends RelativeLayout{
             }
         }
         if (preferredRegions != null) {
-//            Log.d("preference list", preferredRegion.size() + " countries");
+//            Log.d("preference list", preferredRegion.size() + " regions");
             for (Region region : preferredRegions) {
                 region.log();
             }
@@ -384,7 +379,7 @@ public class RegionCodePicker extends RelativeLayout{
      * Only custom master regions, if defined, will be there is selection dialog to select from.
      * To set any regions in preference, it must be included in custom master regions, if defined
      * When not defined or null or blank is set, it will use library's default master list
-     * Custom master list will only limit the visibility of irrelevant country from selection dialog. But all other functions like setRegionForCodeName() or setFullNumber() will consider all the regions.
+     * Custom master list will only limit the visibility of irrelevant region from selection dialog. But all other functions like setRegionForCodeName() or setFullNumber() will consider all the regions.
      *
      * @param customMasterRegions is region name codes separated by comma. e.g. "kh,zz,ke"
      *                              if null or "" , will remove custom regions and library default will be used.
@@ -443,7 +438,7 @@ public class RegionCodePicker extends RelativeLayout{
     String getDialogTitle() {
         switch (customLanguage) {
             default:
-                return "Select region";
+                return "Select your region";
         }
     }
 
@@ -487,7 +482,7 @@ public class RegionCodePicker extends RelativeLayout{
     @Deprecated
     public void setDefaultRegionUsingPhoneCode(int defaultRegionCode) {
         Region defaultRegion = Region.getRegionForCode(customLanguage, preferredRegions, defaultRegionCode); //xml stores data in string format, but want to allow only numeric value to region code to user.
-        if (defaultRegion == null) { //if no correct country is found
+        if (defaultRegion == null) { //if no correct region is found
 //            Log.d(TAG, "No region for code " + defaultRegionCode + " is found");
         } else { //if correct region is found, set the region
             this.defaultRegionCode = defaultRegionCode;
@@ -629,7 +624,7 @@ public class RegionCodePicker extends RelativeLayout{
     }
 
     /**
-     * This will set region with @param regionCode as region code, in CCP
+     * This will set region with @param regionCode as region code, in NRTC
      *
      * @param regionCode a valid region code.
      *                    If you want to set WHK +61(Windhoek), regionCode= 61
@@ -716,7 +711,7 @@ public class RegionCodePicker extends RelativeLayout{
      * @return Full number is regionCode + carrierNumber i.e regionCode= 61 and carrier number= 22222 222, this will return "+666667722"
      */
     public String getFullNumberWithPlus() {
-        String fullNumber = "0" + getFullNumber();
+        String fullNumber = "+" + getFullNumber();
         return fullNumber;
     }
 
@@ -747,12 +742,11 @@ public class RegionCodePicker extends RelativeLayout{
         if (textSize > 0) {
             textView_selectedRegion.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
             setArrowSize(textSize);
-            setFlagSize(textSize);
         }
     }
 
     /**
-     * Modifies size of downArrow in CCP view
+     * Modifies size of downArrow in NRTC view
      *
      * @param arrowSize size in pixels
      */
@@ -766,7 +760,7 @@ public class RegionCodePicker extends RelativeLayout{
     }
 
     /**
-     * If nameCode of region in naregionaltelecode view is not required use this to show/hide region name code of ccp view.
+     * If nameCode of region in naregionaltelecode view is not required use this to show/hide region name code of nrtc view.
      *
      * @param hideNameCode true will remove region name code from naregionaltelecode view, it will result  " 061 "
      *                     false will show region name code in naregionaltelecode view, it will result " (KH) 061 "
@@ -832,15 +826,6 @@ public class RegionCodePicker extends RelativeLayout{
         this.onRegionChangeListener = onRegionChangeListener;
     }
 
-    /**
-     * Modifies size of flag in NRTC view
-     *
-     * @param flagSize size in pixels
-     */
-    public void setFlagSize(int flagSize) {
-        imageViewFlag.getLayoutParams().height = flagSize;
-        imageViewFlag.requestLayout();
-    }
 
     public void showFlag(boolean showFlag) {
         this.showFlag = showFlag;
@@ -900,7 +885,7 @@ public class RegionCodePicker extends RelativeLayout{
      * Update every time new language is supported #languageSupport
      */
     //add an entry for your language in attrs.xml's <attr name="language" format="enum"> enum.
-    //add getMasterListForLanguage() to Country.java
+    //add getMasterListForLanguage() to Region.java
 
     //add here so that language can be set programmatically
     public enum Language {

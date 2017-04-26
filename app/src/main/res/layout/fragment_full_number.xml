@@ -219,12 +219,6 @@
                     style="@style/pointText"
                     android:text="* None of the above functions validate the number format of phone."
                     android:textStyle="bold" />
-                <Button
-                    android:id="@+id/button_next"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="SWIPE to see next feature >"/>
             </LinearLayout>
         </ScrollView>
     </android.support.v7.widget.CardView>

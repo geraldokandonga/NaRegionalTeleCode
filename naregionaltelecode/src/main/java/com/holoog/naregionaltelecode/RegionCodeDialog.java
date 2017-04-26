@@ -33,7 +33,7 @@ class RegionCodeDialog {
         editText_search.setHint(codePicker.getSearchHintText());
         TextView textView_noResult = (TextView) dialog.findViewById(R.id.textView_noresult);
         textView_noResult.setText(codePicker.getNoResultFoundText());
-        final RegionCodeAdapter cca = new RegionCodeAdapter(context, masterRegions, codePicker, editText_search, textView_noResult, dialog);
+        final RegionCodeAdapter nrtc = new RegionCodeAdapter(context, masterRegions, codePicker, editText_search, textView_noResult, dialog);
         if (!codePicker.isSelectionDialogShowSearch()) {
             Toast.makeText(context, "Found not to show search", Toast.LENGTH_SHORT).show();
             RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) recyclerView_regionDialog.getLayoutParams();
@@ -41,7 +41,7 @@ class RegionCodeDialog {
             recyclerView_regionDialog.setLayoutParams(params);
         }
         recyclerView_regionDialog.setLayoutManager(new LinearLayoutManager(context));
-        recyclerView_regionDialog.setAdapter(cca);
+        recyclerView_regionDialog.setAdapter(nrtc);
         dialog.show();
     }
 }

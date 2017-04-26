@@ -14,5 +14,5 @@
     <region code='kh' phoneCode='061' name='Khomas'/>
     <region code='hp' phoneCode='063' name='Hardap'/>
     <region code='kr' phoneCode='063' name='||Karas'/>
-    <region code='zz' phoneCode='066' name='Zambezi'/>
+    <region code='zi' phoneCode='066' name='Zambezi'/>
 </regions>

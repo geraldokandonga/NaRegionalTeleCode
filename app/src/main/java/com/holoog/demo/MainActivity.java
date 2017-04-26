@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             switch (position){
                 case 0:
                     return new IntroductionFragment();
-                case 1:
+/*                case 1:
                     return new DefaultRegionFragment();
                 case 2:
                     return new RegionPreferenceFragment();
@@ -66,14 +66,14 @@ public class MainActivity extends AppCompatActivity {
                 case 5:
                     return new GetRegionFragment();
                 case 6:
-                    return new FullNumberFragment();
+                    return new FullNumberFragment();*/
             }
             return null;
         }
 
         @Override
         public int getCount() {
-            return 11;
+            return 1;
         }
     }
 }
