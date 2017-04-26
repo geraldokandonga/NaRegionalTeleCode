@@ -1,0 +1,160 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IntroductionFragment">
+
+    <android.support.v7.widget.CardView style="@style/parentCard">
+
+        <ScrollView style="@style/parentScrollView">
+
+            <LinearLayout style="@style/parentLinear">
+
+                <TextView
+                    style="@style/fragmentTitle"
+                    android:text="Welcome to NRTC" />
+
+                <TextView
+                    style="@style/fragmentSubTitle"
+                    android:text="This app shows basic use cases of the NRTC library." />
+
+                <TextView
+                    style="@style/sectionText"
+                    android:text="What is Namibia Telephone Code Picker (NRTC)?" />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Region Code Picker (NRTC) is an android library which provides easy way to search and select region code for the telephone number." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 NRTC enriches view of form screens. i.e. Sign up screen, Login with teleNumber, Edit profile screen." />
+
+                <TextView
+                    style="@style/sectionText"
+                    android:text="How does it add value?" />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="NRTC gives professional touch to your well designed form like login / sign up / edit profile. This library removes confusion about how to add number and thus make view more understandable. Finally reduces mistakes in user's input" />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Your telephone view with out NRTC" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#e5e5e5"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Telephone number"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter number with national code"
+                            android:inputType="phone"
+                            android:textColor="@android:color/black"
+                            android:maxLines="1" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="* add your region code with '0' as prefix. i.e 61" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Above view can be transformed by using NRTC" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#e5e5e5"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Telephone number"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right">
+
+                            <com.holoog.naregionaltelecode.RegionCodePicker
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:contentColor="@android:color/black" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="telephone number"
+                                android:inputType="phone"
+                                android:textColor="@android:color/black"
+                                android:maxLines="1" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <TextView
+                    style="@style/sectionText"
+                    android:text="Features of library" />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Option to set default region." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Easy interface to select region." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Search region using region name or region telephone code or region name code." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Works well with region code and full number as well." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Customized content color of NRTC view." />
+
+                <Button
+                    android:id="@+id/button_letsGo"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SWIPE to  see features" />
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+</FrameLayout>

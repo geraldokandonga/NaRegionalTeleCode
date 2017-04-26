@@ -1,0 +1,348 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DefaultRegionFragment">
+
+    <android.support.v7.widget.CardView style="@style/parentCard">
+
+        <ScrollView style="@style/parentScrollView">
+
+            <LinearLayout style="@style/parentLinear">
+
+                <TextView
+                    style="@style/fragmentTitle"
+                    android:text="Default Region" />
+
+                <TextView
+                    style="@style/fragmentSubTitle"
+                    android:text="Default region is the region where most of your target audience belong." />
+
+                <TextView
+                    style="@style/sectionText"
+                    android:text="How to set default region?" />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 The default region can be set through xml layout and programmatically as well." />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            style="@style/pointText"
+                            android:text="1. Using xml "
+                            android:textStyle="bold" />
+
+                        <TextView
+                            style="@style/pointText"
+                            android:paddingLeft="32dp"
+                            android:text='A. Using region name code'
+                            android:textStyle="italic|bold" />
+
+                        <TextView
+                            style="@style/pointText"
+                            android:paddingLeft="32dp"
+                            android:text='add app:defaultNameCode="KH" (replace "KH" with your default region name code) to xml layout.' />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="32dp"
+                            android:text='&#60;com.holoog.naregionaltelecode.RegionCodePicker \n android:id="@+id/nrtc" \n android:layout_width="wrap_content" \n android:layout_height="wrap_content" \n app:defaultNameCode="KH" /&#62;' />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginLeft="32dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@color/dullBG"
+                            android:padding="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Telephone number"
+                                    android:textSize="18sp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical">
+
+                                    <com.holoog.naregionaltelecode.RegionCodePicker
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        app:defaultNameCode="KH" />
+
+                                    <EditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:enabled="false"
+                                        android:hint="phone"
+                                        android:inputType="phone"
+                                        android:maxLines="1" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            style="@style/pointText"
+                            android:paddingLeft="32dp"
+                            android:text='B. Using telephone code'
+                            android:textStyle="italic|bold" />
+
+                        <TextView
+                            style="@style/pointText"
+                            android:paddingLeft="32dp"
+                            android:text='add app:defaultCode="061" (replace 061 by your default region code) to xml layout.' />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="32dp"
+                            android:text='&#60;com.naregionaltelecode.RegionCodePicker \n android:id="@+id/ccp" \n android:layout_width="wrap_content" \n android:layout_height="wrap_content" \n app:defaultCode="81" /&#62;' />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginLeft="32dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@color/dullBG"
+                            android:padding="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Telephone number"
+                                    android:textSize="18sp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical">
+
+                                    <com.holoog.naregionaltelecode.RegionCodePicker
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        app:defaultCode="61" />
+
+                                    <EditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:enabled="false"
+                                        android:hint="telephone"
+                                        android:inputType="phone"
+                                        android:maxLines="1" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <TextView
+                            style="@style/pointText"
+                            android:layout_marginLeft="32dp"
+                            android:text="\u2022 Setting default region using telephone code is not recommended. There are few cases where more than one countries have same phone code. Say US and Canada have +1. Putting '1' will result in Canada even if you were intended  for US" />
+
+                        <TextView
+                            style="@style/pointText"
+                            android:layout_marginLeft="32dp"
+                            android:text="\u2022 Use app:defaultNameCode or app:regionPreference to resolve issue." />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/pointText"
+                        android:layout_marginLeft="32dp"
+                        android:paddingLeft="0dp"
+                        android:text="\u2022 Use app:defaultNameCode has higher priority than app:defaultCode for setting default region using XML." />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="2. Programmatically "
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/pointText"
+                    android:paddingLeft="32dp"
+                    android:text='A. Using region name code'
+                    android:textStyle="italic|bold" />
+                <TextView
+                    style="@style/pointText"
+                    android:paddingLeft="32dp"
+                    android:text="use setDefaultRegionUsingNameCode() method." />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editText_defaultNameCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapCharacters"
+                        android:maxWidth="50dp"
+                        android:minWidth="50dp"
+                        android:text="KH"
+                        android:maxLines="1" />
+
+                    <Button
+                        android:id="@+id/button_setDefaultNameCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        android:text="set 'KH' as Default region Name Code" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="OR"
+                    android:textSize="20sp" />
+
+                <TextView
+                    style="@style/pointText"
+                    android:paddingLeft="32dp"
+                    android:text='B. Using phone code'
+                    android:textStyle="italic|bold" />
+                <TextView
+                    style="@style/pointText"
+                    android:paddingLeft="32dp"
+                    android:text="use setDefaultRegionUsingPhoneCode() method." />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editText_defaultCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxWidth="50dp"
+                        android:minWidth="50dp"
+                        android:text="067"
+                        android:maxLines="1" />
+
+                    <Button
+                        android:id="@+id/button_setDefaultCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        android:text="set 065 as Default Region Code" />
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/dullBG"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Telephone number"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <com.holoog.naregionaltelecode.RegionCodePicker
+                                android:id="@+id/nrtc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:hint="telephone"
+                                android:inputType="phone"
+                                android:maxLines="1" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <TextView
+                    style="@style/pointText"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:text="\u2022 setDefaultRegionCode() / setDefaultRegionNameCode() will not set default region as selected region in NRTC view. To set default region as selected region in NRTC view, call resetToDefaultRegion() method." />
+
+                <Button
+                    android:id="@+id/button_resetToDefault"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:text="Reset to default region code" />
+
+                <TextView
+                    style="@style/pointText"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:text="\u2022 resetToDefaultRegion() will set default region as selected region in NRTC, it can be used at the time of form reset." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 If you do not specify default region from xml, KH 061 (Khomas) will be the default region until you update default region programmatically." />
+
+                <Button
+                    android:id="@+id/button_next"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SWIPE to see next feature >" />
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+</FrameLayout>

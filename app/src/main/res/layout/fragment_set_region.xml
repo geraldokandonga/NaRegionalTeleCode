@@ -1,0 +1,226 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SetRegionFragment">
+
+    <android.support.v7.widget.CardView style="@style/parentCard">
+
+        <ScrollView style="@style/parentScrollView">
+
+            <LinearLayout style="@style/parentLinear">
+
+                <TextView
+                    style="@style/fragmentTitle"
+                    android:text="Choose and set region" />
+
+                <TextView
+                    style="@style/fragmentSubTitle"
+                    android:text="Choosing and setting region will update selected region in CCP." />
+
+                <TextView
+                    style="@style/sectionText"
+                    android:text="How to choose region?" />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 In order to choose region, click on NRTC view." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Then search region by region name or phone code or name code." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Tap on region from list to choose" />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Try with this (Tap on ccp view)" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/dullBG"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phone number"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <com.holoog.naregionaltelecode.RegionCodePicker
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:hint="phone"
+                                android:inputType="phone"
+                                android:maxLines="1" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <TextView style="@style/sectionText"
+                    android:text="Set region programmatically
+                   "/>
+
+
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Using region name code"
+                    android:textStyle="bold"/>
+                <TextView
+                    style="@style/pointText"
+                    android:layout_marginLeft="24dp"
+                    android:text="Use setRegionForNameCode() method." />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <EditText
+                        android:id="@+id/editText_regionNameCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxWidth="50dp"
+                        android:minWidth="50dp"
+                        android:text="KH"
+                        android:maxLines="1" />
+                    <Button
+                        android:id="@+id/button_setRegionNameCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        android:text="set region with name code  'KH'"
+                        />
+                </LinearLayout>
+                <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                android:text="OR"
+                    android:textSize="24sp" />
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Using phone code"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    style="@style/pointText"
+                    android:layout_marginLeft="24dp"
+                    android:text="\u2022 Use setRegionForPhoneCode() method." />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <EditText
+                        android:id="@+id/editText_regionCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxWidth="50dp"
+                        android:minWidth="50dp"
+                        android:text="061"
+                        android:maxLines="1" />
+                    <Button
+                        android:id="@+id/button_setRegion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        android:text="set region with code 061"
+                        />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/dullBG"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phone number"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <com.holoog.naregionaltelecode.RegionCodePicker
+                                android:id="@+id/nrtc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:hint="phone"
+                                android:inputType="phone"
+                                android:maxLines="1" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+                <TextView
+                    style="@style/pointText"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:text="\u2022 If specified region code does not match in any country, default region will be set in to CCP." />
+
+                <TextView
+                    style="@style/sectionText"
+                    android:text="How to listen change in selection?" />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 To get call back when region is changed, you need to add OnRegionChangeListener from code." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 To set listener, use nrtc.setOnRegionChangeListener(changeListener); function." />
+
+                <Button
+                    android:id="@+id/button_next"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Next feature >"/>
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+</FrameLayout>

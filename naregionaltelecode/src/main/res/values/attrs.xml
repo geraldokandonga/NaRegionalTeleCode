@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RegionCodePicker">
+        <attr name="defaultCode" format="integer" />
+        <attr name="contentColor" format="color"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="arrowSize" format="dimension"/>
+        <attr name="regionPreference" format="string"/>
+        <attr name="defaultNameCode" format="string" />
+        <attr name="hideNameCode" format="boolean"/>
+        <attr name="nrtcLanguage" format="enum">
+            <enum name="ENGLISH" value="1"/>
+        </attr>
+        <attr name="keyboardAutoPopOnSearch" format="boolean"/>
+        <attr name="customMasterRegions" format="string" />
+        <attr name="showFlag" format="boolean" />
+        <attr name="showFullName" format="boolean" />
+        <attr name="selectionDialogShowSearch" format="boolean" />
+        <attr name="nrtcClickable" format="boolean" />
+    </declare-styleable>
+</resources>

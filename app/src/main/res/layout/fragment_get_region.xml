@@ -1,0 +1,183 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GetRegionFragment">
+
+    <android.support.v7.widget.CardView style="@style/parentCard">
+
+        <ScrollView style="@style/parentScrollView">
+
+            <LinearLayout style="@style/parentLinear">
+                <TextView
+                    style="@style/fragmentTitle"
+                    android:text="Read selected region" />
+
+                <TextView
+                    style="@style/fragmentSubTitle"
+                    android:text="It's just one step away to read details of selected region" />
+
+                <TextView
+                    style="@style/sectionText"
+                    android:text="Read properties"/>
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Region's 3 properties can be read individually. For simplicity, here single button click will read all 3 properties."/>
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Try here"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/dullBG"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Telephone number"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <com.holoog.naregionaltelecode.RegionCodePicker
+                                android:id="@+id/nrtc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:defaultNameCode="KH"
+                                app:keyboardAutoPopOnSearch="false" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:hint="Telephone"
+                                android:inputType="phone"
+                                android:maxLines="1" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+                <Button
+                    android:id="@+id/button_readRegion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:text="Read Selected region"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="3">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="Region"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="Telephone code"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="Name Code"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="3">
+                        <TextView
+                            android:id="@+id/textView_regionName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="_________"
+                            android:textColor="@android:color/black" />
+                        <TextView
+                            android:id="@+id/textView_regionCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="_________"
+                            android:textColor="@android:color/black" />
+                        <TextView
+                            android:id="@+id/textView_regionNameCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="_________"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    style="@style/sectionText"
+                    android:text="Read selected region phone code"/>
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 To get selected region code as String type and without prefix “+”, use getSelectedregionCode(); method. => “61”"/>
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 To get selected region code as String type and with prefix “+”, use getSelectedRegionCodeWithPlus(); method. => “061”"/>
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 To get selected region code as int (Integer) type, use getSelectedRegionCodeAsInt(); method. => 61"/>
+
+                <TextView
+                    style="@style/sectionText"
+                    android:text="Read selected region name"/>
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 To get selected region’s name, use getSelectedRegionName(); => “Oshana”"/>
+
+                <TextView
+                    style="@style/sectionText"
+                    android:text="Read selected region name code"/>
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 To get selected region’s name code, use getSelectedRegionNameCode(); => “OS”"/>
+                <Button
+                    android:id="@+id/button_next"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SWIPE to see Next feature >"/>
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+
+</FrameLayout>

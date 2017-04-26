@@ -1,0 +1,250 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegionPreferenceFragment">
+
+    <android.support.v7.widget.CardView
+        style="@style/parentCard">
+
+        <ScrollView style="@style/parentScrollView">
+
+            <LinearLayout style="@style/parentLinear">
+
+                <TextView
+                    style="@style/fragmentTitle"
+                    android:text="Custom master region list" />
+
+                <TextView
+                    style="@style/fragmentSubTitle"
+                    android:text="Customize region choices for user" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        style="@style/sectionText"
+                        android:text="What is custom master country list?" />
+
+
+                    <TextView
+                        style="@style/pointText"
+                        android:text="\u2022 If your app expects users from only few regions then you might wish to remove all other regions from selection list." />
+
+                    <TextView
+                        style="@style/pointText"
+                        android:text="\u2022 You can remove unnecessary regions by setting your custom master region list." />
+
+
+                    <TextView
+                        style="@style/pointText"
+                        android:text="\u2022 It will help you provide clean interface." />
+
+                    <TextView
+                        style="@style/pointText"
+                        android:text="\u2022 Also it will keep user from selecting irrelevant region." />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/sectionText"
+                    android:text="How to set custom master list?" />
+
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 The custom master regions list can be set through xml layout and programmatically as well." />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/pointText"
+                            android:text="1. Using xml "
+                            android:textStyle="bold" />
+
+                        <TextView
+                            style="@style/pointText"
+                            android:paddingLeft="32dp"
+                            android:text='add app:customMasterRegions="KH,KW,KE,ZZ" (replace "KH,KW,KE,ZZ" by your own region code names) to xml layout.' />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="32dp"
+                            android:text='&#60;com.holoog.naregionaltelecode.RegionCodePicker \n android:id="@+id/nrtc" \n android:layout_width="wrap_content" \n android:layout_height="wrap_content" \n app:defaultNameCode="KH" \n app:customMasterRegion="KH,KW,KE,ZZ"/&#62;' />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:layout_marginLeft="32dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@color/dullBG"
+                            android:padding="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="telephone number"
+                                    android:textSize="18sp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical">
+
+                                    <com.holoog.naregionaltelecode.RegionCodePicker
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        app:customMasterRegions="KH,KE,KW,ZZ,OM,OO"
+                                        app:defaultNameCode="KH" />
+
+                                    <EditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:enabled="false"
+                                        android:hint="telephone"
+                                        android:inputType="phone"
+                                        android:maxLines="1" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/pointText"
+                        android:layout_marginLeft="32dp"
+                        android:paddingLeft="0dp"
+                        android:text="\u2022 Click on NRTC to check the effect." />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="2. Programmatically "
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    style="@style/pointText"
+                    android:paddingLeft="32dp"
+                    android:text="use setCustomMasterRegion() method." />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/editText_countryPreference"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapCharacters"
+                        android:text="KH,KW,KE,ZZ"
+                        android:maxLines="1" />
+
+                    <Button
+                        android:id="@+id/button_setCustomMaster"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        android:text="set 'KH,KW,KE,ZZ' as master regions" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/dullBG"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Telephone number"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <com.holoog.naregionaltelecode.RegionCodePicker
+                                android:id="@+id/nrtc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:enabled="false"
+                                android:hint="telephone"
+                                android:inputType="phone"
+                                android:maxLines="1" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <TextView
+                    style="@style/pointText"
+                    android:layout_marginLeft="32dp"
+                    android:paddingLeft="0dp"
+                    android:text="\u2022 After setting new custom list, click on NRTC to verify change in selection list." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:layout_marginLeft="32dp"
+                    android:paddingLeft="0dp"
+                    android:text="\u2022 Custom master list will only limit the visibility of irrelevant regions from selection dialog. But all other functions like setRegionForCodeName() or setFullNumber() will consider all the regions." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:layout_marginLeft="32dp"
+                    android:paddingLeft="0dp"
+                    android:text="\u2022 Preferred region list will be a subset of custom master list. If some xyz region is not in custom master list, it won't be added to preferred region list." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:layout_marginLeft="32dp"
+                    android:paddingLeft="0dp"
+                    android:text="\u2022 To remove custom master list just call setCustomMasterRegion(null);. This will reset the region list to library's default master list." />
+
+                <Button
+                    android:id="@+id/button_next"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Next feature >" />
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+</FrameLayout>

@@ -1,0 +1,231 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FullNumberFragment">
+
+    <android.support.v7.widget.CardView style="@style/parentCard">
+
+        <ScrollView style="@style/parentScrollView">
+
+            <LinearLayout style="@style/parentLinear">
+
+                <TextView
+                    style="@style/fragmentTitle"
+                    android:text="Full number support" />
+
+                <TextView
+                    style="@style/fragmentSubTitle"
+                    android:text="Full number is combination of region code and carrier number." />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A carrierNumberEditText must be registered in order to work with full number."
+                    android:textColor="@android:color/holo_red_dark" />
+
+                <TextView
+                    style="@style/sectionText"
+                    android:text="Register carrierNumberEditText" />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 CarrierNumberEditText is the supplementary editText in which carrier number part of full number is entered." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 editText can be registered using registerCarrierNumberEditText()." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 A carrierNumberEditText must be registered before any function call of full number like setFullNumber() or getFullNumber()." />
+
+
+                <TextView
+                    style="@style/sectionText"
+                    android:text="Load full number" />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 To load full number, use setFullNumber() method. In this method you need to pass the full number. " />
+
+                <EditText
+                    android:id="@+id/editText_loadFullNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:inputType="number"
+                    android:text="06122233"
+                    android:maxLines="1" />
+                <Button
+                    android:id="@+id/button_loadFullNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="Load 06122233 to NRTC"
+                    android:maxLines="1" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#e5e5e5"
+                    android:padding="8dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Phone number"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <com.holoog.naregionaltelecode.RegionCodePicker
+                                android:id="@+id/nrtc_loadFullNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:regionPreference="kh,om"
+                                />
+                            <EditText
+                                android:id="@+id/editText_loadCarrierNumber"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="telephone"
+                                android:inputType="phone"
+                                android:textColor="@android:color/black"
+                                android:maxLines="1" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Prefix “+” is optional for full number so full number can be “0616667722” or “061667722”. Both will set same region and carrier number." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 This will detect region code from full number and set that region to nrtc and carrier number ( remaining part of full number other than region code) will be set as text of registered carrier editText." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 If no valid region code is found in beginning part of full number, default region will be set to NRTC and full number will be set as text of registered carrier editText. " />
+
+                <TextView
+                    style="@style/sectionText"
+                    android:text="Get full number" />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Full number can be read from CCP if carrierEditText is registered." />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#e5e5e5"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Telephone number"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <com.holoog.naregionaltelecode.RegionCodePicker
+                                android:id="@+id/nrtc_getFullNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <EditText
+                                android:id="@+id/editText_getCarrierNumber"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="telephone"
+                                android:inputType="phone"
+                                android:text="222 333"
+                                android:textColor="@android:color/black"
+                                android:maxLines="1" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/button_getFullNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:maxLines="2"
+                        android:text="Get Full number from NRTC" />
+
+                    <Button
+                        android:id="@+id/button_getFullNumberWithPlus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:maxLines="2"
+                        android:text="Get full number with + from NRTC" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/editText_getFullNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:hint="Full number"
+                    android:inputType="number"
+                    android:text=""
+                    android:maxLines="1" />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Use getFullNumber(); for full number without “+” prefix." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="\u2022 Use getFullNumberWithPlus(); for full number with “+” prefix." />
+
+                <TextView
+                    style="@style/pointText"
+                    android:text="* None of the above functions validate the number format of phone."
+                    android:textStyle="bold" />
+                <Button
+                    android:id="@+id/button_next"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SWIPE to see next feature >"/>
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+</FrameLayout>

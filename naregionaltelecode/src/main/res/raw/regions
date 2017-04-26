@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<regions>
+    <Note content='This list is just for user reference. NaRegionalTeleCodePicker picks region list from getMasterRegions(), a static method of Region class. If region is added to or modified in or deleted from this list, same change should be done to that method. ' />
+    <region code='eo' phoneCode='064' name='Erongo' />
+    <region code='ku' phoneCode='065' name='Kunene'/>
+    <region code='om' phoneCode='065' name='Omusati'/>
+    <region code='os' phoneCode='065' name='Oshana'/>
+    <region code='oh' phoneCode='065' name='Ohanguena'/>
+    <region code='oo' phoneCode='067' name='Oshikoto'/>
+    <region code='kw' phoneCode='066' name='Kavango East'/>
+    <region code='ke' phoneCode='066' name='Kavango West'/>
+    <region code='ot' phoneCode='067' name='Otjizondjupa'/>
+    <region code='oe' phoneCode='062' name='Omaheke'/>
+    <region code='kh' phoneCode='061' name='Khomas'/>
+    <region code='hp' phoneCode='063' name='Hardap'/>
+    <region code='kr' phoneCode='063' name='||Karas'/>
+    <region code='zz' phoneCode='066' name='Zambezi'/>
+</regions>
