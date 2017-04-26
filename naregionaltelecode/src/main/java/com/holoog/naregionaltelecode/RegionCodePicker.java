@@ -94,8 +94,7 @@ public class RegionCodePicker extends RelativeLayout{
         mInflater = LayoutInflater.from(context);
         holderView = mInflater.inflate(R.layout.layout_code_picker, this, true);
         textView_selectedRegion = (TextView) holderView.findViewById(R.id.textView_selectedRegion);
-        holder = (RelativeLayout) holderView.findViewById(R.id.countryCodeHolder);
-        imageViewArrow = (ImageView) holderView.findViewById(R.id.imageView_arrow);
+        holder = (RelativeLayout) holderView.findViewById(R.id.regionCodeHolder);
         linearFlagHolder = (LinearLayout) holderView.findViewById(R.id.linear_flag_holder);
         relativeClickConsumer = (RelativeLayout) holderView.findViewById(R.id.rlClickConsumer);
         codePicker = this;
@@ -233,12 +232,12 @@ public class RegionCodePicker extends RelativeLayout{
 
         if (!hideNameCode) {
             if (showFullName) {
-                textView_selectedRegion.setText(selectedRegion.getName().toUpperCase() + "  +" + selectedRegion.getPhoneCode());
+                textView_selectedRegion.setText(selectedRegion.getName().toUpperCase() + "  0" + selectedRegion.getPhoneCode());
             } else {
-                textView_selectedRegion.setText("(" + selectedRegion.getNameCode().toUpperCase() + ")  +" + selectedRegion.getPhoneCode());
+                textView_selectedRegion.setText("(" + selectedRegion.getNameCode().toUpperCase() + ")  0" + selectedRegion.getPhoneCode());
             }
         } else {
-            textView_selectedRegion.setText("+" + selectedRegion.getPhoneCode());
+            textView_selectedRegion.setText("0" + selectedRegion.getPhoneCode());
         }
 
         if (onRegionChangeListener != null) {
@@ -545,7 +544,7 @@ public class RegionCodePicker extends RelativeLayout{
      * @return String value of default region code in naregionaltelecode with prefix "+"
      */
     public String getDefaultRegionCodeWithPlus() {
-        return "+" + getDefaultRegionCode();
+        return "0" + getDefaultRegionCode();
     }
 
     /**
@@ -587,12 +586,12 @@ public class RegionCodePicker extends RelativeLayout{
     }
 
     /**
-     * To get code of selected region with prefix "+".
+     * To get code of selected region with prefix "0".
      *
-     * @return String value of selected country code in naregionaltelecode with prefix "+"
+     * @return String value of selected region code in naregionaltelecode with prefix "0"
      */
     public String getSelectedRegionCodeWithPlus() {
-        return "+" + getSelectedRegionCode();
+        return "0" + getSelectedRegionCode();
     }
 
     /**
@@ -679,7 +678,7 @@ public class RegionCodePicker extends RelativeLayout{
     /**
      * This function combines selected region code from naregionaltelecode and carrier number from @param editTextCarrierNumber
      *
-     * @return Full number is regionCode + carrierNumber i.e regionCode= 61 and carrier number= 333 333, this will return "613333333"
+     * @return Full number is regionCode 0 carrierNumber i.e regionCode= 61 and carrier number= 333 333, this will return "613333333"
      */
     public String getFullNumber() {
         String fullNumber;
@@ -766,7 +765,7 @@ public class RegionCodePicker extends RelativeLayout{
     }
 
     /**
-     * If nameCode of region in naregionaltelecode view is not required use this to show/hide region name code of nrtc view.
+     * If nameCode of region in naregionaltelecode view is not required use this to show/hide region name code of ccp view.
      *
      * @param hideNameCode true will remove region name code from naregionaltelecode view, it will result  " 061 "
      *                     false will show region name code in naregionaltelecode view, it will result " (KH) 061 "

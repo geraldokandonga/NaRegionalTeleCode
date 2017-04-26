@@ -12,7 +12,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -93,8 +92,8 @@ import java.util.List;
         textView_noResult.setVisibility(View.GONE);
         query = query.toLowerCase();
 
-        //if query started from "+" ignore it
-        if (query.length() > 0 && query.charAt(0) == '+') {
+        //if query started from "0" ignore it
+        if (query.length() > 0 && query.charAt(0) == '0') {
             query=query.substring(1);
         }
 

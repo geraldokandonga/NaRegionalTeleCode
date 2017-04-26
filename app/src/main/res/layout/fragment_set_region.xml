@@ -16,7 +16,7 @@
 
                 <TextView
                     style="@style/fragmentSubTitle"
-                    android:text="Choosing and setting region will update selected region in CCP." />
+                    android:text="Choosing and setting region will update selected region in NRTC." />
 
                 <TextView
                     style="@style/sectionText"
@@ -72,7 +72,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:enabled="false"
-                                android:hint="phone"
+                                android:hint="telephone"
                                 android:inputType="phone"
                                 android:maxLines="1" />
                         </LinearLayout>

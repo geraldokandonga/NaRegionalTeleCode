@@ -206,8 +206,7 @@ class Region {
      *
      * @return
      */
-    public static List<Region> getLibraryMasterRegionList(RegionCodePicker.Language language) {
-        {
+    public static List<Region> getLibraryMasterRegionList(RegionCodePicker.Language language) {{
             return getLibraryMasterRegionEnglish();
         }
     }
@@ -217,7 +216,7 @@ class Region {
         regions.add(new Region("eo", "64", "Erongo"));
         regions.add(new Region("ku", "65", "Kunene"));
         regions.add(new Region("om", "65", "Omusati"));
-        regions.add(new Region("os", "65", "Oshana"));
+        regions.add(new Region("oa", "65", "Oshana"));
         regions.add(new Region("oh", "65", "Ohanguena"));
         regions.add(new Region("oo", "67", "Oshikoto"));
         regions.add(new Region("kw", "66", "Kavango West"));
