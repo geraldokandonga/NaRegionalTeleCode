@@ -54,7 +54,7 @@ public class DefaultRegionFragment extends Fragment {
                 try {
                     code = Integer.parseInt(editTextDefaultPhoneCode.getText().toString());
                     nrtc.setDefaultRegionUsingPhoneCode(code);
-                    Toast.makeText(getActivity(), "Now default country is " + nrtc.getDefaultRegionName() + " with phone code " + nrtc.getDefaultRegionCode(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Now default region is " + nrtc.getDefaultRegionName() + " with phone code " + nrtc.getDefaultRegionCode(), Toast.LENGTH_LONG).show();
                 } catch (Exception ex) {
                     Toast.makeText(getActivity(), "Invalid number format", Toast.LENGTH_LONG).show();
                 }
@@ -99,7 +99,7 @@ public class DefaultRegionFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                buttonSetNewDefaultPhoneCode.setText("set " + s + " as Default Country Code");
+                buttonSetNewDefaultPhoneCode.setText("set " + s + " as Default Region Code");
             }
 
             @Override
@@ -116,7 +116,7 @@ public class DefaultRegionFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                buttonSetNewDefaultNameCode.setText("set '" + s + "' as Default Country Name Code");
+                buttonSetNewDefaultNameCode.setText("set '" + s + "' as Default Region Name Code");
             }
 
             @Override

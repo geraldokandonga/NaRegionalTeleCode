@@ -80,7 +80,7 @@ class Region {
      * @param code               phone code. i.e "61" or "61"
      * @return region that has telephone code as @param code.
      * or returns null if no region matches given code.
-     * if same code (e.g. 061) available for more than one region ( Katima, Kavango Eat) , this function will return preferred region.
+     * if same code (e.g. 061) available for more than one region ( Zambezi, Kavango Eat) , this function will return preferred region.
      */
     private static Region getRegionForCode(RegionCodePicker.Language language, List<Region> preferredRegions, String code) {
 
@@ -264,7 +264,7 @@ class Region {
     }
 
     public String logString() {
-        return nameCode.toUpperCase() + " +" + phoneCode + "(" + name + ")";
+        return nameCode.toUpperCase() + " 0" + phoneCode + "(" + name + ")";
     }
 
     /**

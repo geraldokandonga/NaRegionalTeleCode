@@ -28,7 +28,7 @@
 
                     <TextView
                         style="@style/sectionText"
-                        android:text="What is custom master country list?" />
+                        android:text="What is custom master region list?" />
 
 
                     <TextView

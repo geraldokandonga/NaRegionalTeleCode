@@ -54,7 +54,7 @@ public class CustomMasterFragment extends Fragment {
                 try {
                     customMasterCountries = editTextCountryCustomMaster.getText().toString();
                     nrtc.setCustomMasterRegions(customMasterCountries);
-                    Toast.makeText(getActivity(), "Master list has been changed. Tap on ccp to see the changes.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Master list has been changed. Tap on nrtc to see the changes.", Toast.LENGTH_LONG).show();
                 } catch (Exception ex) {
 
                 }

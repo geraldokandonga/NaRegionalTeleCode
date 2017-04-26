@@ -54,7 +54,7 @@ public class RegionPreferenceFragment extends Fragment {
                 try {
                     countryPreference = editTextRegionPreference.getText().toString();
                     nrtc.setRegionPreference(countryPreference);
-                    Toast.makeText(getActivity(), "Country preference list has been changed, click on CCP to see them at top of list.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Region preference list has been changed, click on NRTC to see them at top of list.", Toast.LENGTH_LONG).show();
                 } catch (Exception ex) {
 
                 }

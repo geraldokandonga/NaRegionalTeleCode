@@ -54,7 +54,7 @@ public class FullNumberFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                buttonLoadNumber.setText("Load "+s+" to CCP.");
+                buttonLoadNumber.setText("Load "+s+" to NRTC.");
             }
 
             @Override

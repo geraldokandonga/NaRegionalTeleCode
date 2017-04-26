@@ -90,7 +90,7 @@ public class RegionCodePicker extends RelativeLayout{
     }
 
     private void init(AttributeSet attrs) {
-//        Log.d(TAG, "Initialization of CCP");
+//        Log.d(TAG, "Initialization of NRTC");
         mInflater = LayoutInflater.from(context);
         holderView = mInflater.inflate(R.layout.layout_code_picker, this, true);
         textView_selectedRegion = (TextView) holderView.findViewById(R.id.textView_selectedRegion);
@@ -111,13 +111,13 @@ public class RegionCodePicker extends RelativeLayout{
                 0, 0);
         //default country code
         try {
-            //hide nameCode. If someone wants only phone code to avoid name collision for same country phone code.
+            //hide nameCode. If someone wants only phone code to avoid name collision for same region phone code.
             hideNameCode = a.getBoolean(R.styleable.RegionCodePicker_hideNameCode, false);
 
             //show full name
             showFullName = a.getBoolean(R.styleable.RegionCodePicker_showFullName, false);
 
-            //autopop keyboard
+            //auto pop keyboard
             setKeyboardAutoPopOnSearch(a.getBoolean(R.styleable.RegionCodePicker_keyboardAutoPopOnSearch, true));
 
             //if custom language is specified, then set it as custom
@@ -179,7 +179,7 @@ public class RegionCodePicker extends RelativeLayout{
                 textView_selectedRegion.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
                 setFlagSize(textSize);
                 setArrowSize(textSize);
-            } else { //no textsize specified
+            } else { //no text size specified
                 DisplayMetrics dm = context.getResources().getDisplayMetrics();
                 int defaultSize = Math.round(18 * (dm.xdpi / DisplayMetrics.DENSITY_DEFAULT));
                 setTextSize(defaultSize);
@@ -276,7 +276,7 @@ public class RegionCodePicker extends RelativeLayout{
     }
 
     /**
-     * By default, keyboard is poped every time ccp is clicked and selection dialog is opened.
+     * By default, keyboard is poped every time nrtc is clicked and selection dialog is opened.
      *
      * @param keyboardAutoPopOnSearch true: to open keyboard automatically when selection dialog is opened
      *                                false: to avoid auto pop of keyboard
@@ -766,7 +766,7 @@ public class RegionCodePicker extends RelativeLayout{
     }
 
     /**
-     * If nameCode of region in naregionaltelecode view is not required use this to show/hide region name code of ccp view.
+     * If nameCode of region in naregionaltelecode view is not required use this to show/hide region name code of nrtc view.
      *
      * @param hideNameCode true will remove region name code from naregionaltelecode view, it will result  " 061 "
      *                     false will show region name code in naregionaltelecode view, it will result " (KH) 061 "
