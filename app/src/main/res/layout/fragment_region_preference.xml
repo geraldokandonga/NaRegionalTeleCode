@@ -167,7 +167,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textCapCharacters"
-                        android:text="AU,RU,LK,VN"
+                        android:text="KH,OM,ZZ,OS"
                         android:maxLines="2" />
 
                     <Button
@@ -175,7 +175,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:maxLines="2"
-                        android:text="set 'KH,OS,OO,ZZ' as region preference" />
+                        android:text="set 'KH,OM,ZZ,OS' as region preference" />
                 </LinearLayout>
 
                 <RelativeLayout

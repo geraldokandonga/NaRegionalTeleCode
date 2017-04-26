@@ -96,7 +96,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:enabled="false"
-                                        android:hint="phone"
+                                        android:hint="telephone"
                                         android:inputType="phone"
                                         android:maxLines="1" />
                                 </LinearLayout>
@@ -126,7 +126,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
                             android:layout_marginLeft="32dp"
-                            android:text='&#60;com.naregionaltelecode.RegionCodePicker \n android:id="@+id/ccp" \n android:layout_width="wrap_content" \n android:layout_height="wrap_content" \n app:defaultCode="81" /&#62;' />
+                            android:text='&#60;com.holoog.naregionaltelecode.RegionCodePicker \n android:id="@+id/nrtc" \n android:layout_width="wrap_content" \n android:layout_height="wrap_content" \n app:defaultCode="61" /&#62;' />
 
                         <RelativeLayout
                             android:layout_width="match_parent"
