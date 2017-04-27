@@ -535,11 +535,11 @@ public class RegionCodePicker extends RelativeLayout{
     }
 
     /**
-     * To get code of default region with prefix "+".
+     * To get code of default region with prefix "0".
      *
-     * @return String value of default region code in naregionaltelecode with prefix "+"
+     * @return String value of default region code in naregionaltelecode with prefix "0"
      */
-    public String getDefaultRegionCodeWithPlus() {
+    public String getDefaultRegionCodeWithZero() {
         return "0" + getDefaultRegionCode();
     }
 
@@ -586,7 +586,7 @@ public class RegionCodePicker extends RelativeLayout{
      *
      * @return String value of selected region code in naregionaltelecode with prefix "0"
      */
-    public String getSelectedRegionCodeWithPlus() {
+    public String getSelectedRegionCodeWithZero() {
         return "0" + getSelectedRegionCode();
     }
 
@@ -710,8 +710,8 @@ public class RegionCodePicker extends RelativeLayout{
      *
      * @return Full number is regionCode + carrierNumber i.e regionCode= 61 and carrier number= 22222 222, this will return "+666667722"
      */
-    public String getFullNumberWithPlus() {
-        String fullNumber = "+" + getFullNumber();
+    public String getFullNumberWithZero() {
+        String fullNumber = "0" + getFullNumber();
         return fullNumber;
     }
 

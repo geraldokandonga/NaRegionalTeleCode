@@ -138,7 +138,7 @@ class Region {
      * Search a region which matches @param nameCode.
      *
      * @param nameCode region name code. i.e KH or us or Au. See regions.xml for all code names.
-     * @return Country that has phone code as @param code.
+     * @return Region that has phone code as @param code.
      * or returns null if no region matches given code.
      */
     public static Region getRegionForNameCodeFromLibraryMasterList(RegionCodePicker.Language language, String nameCode) {
@@ -183,7 +183,7 @@ class Region {
     static Region getRegionForNumber(RegionCodePicker.Language language, List<Region> preferredRegions, String fullNumber) {
         int firstDigit;
         if (fullNumber.length() != 0) {
-            if (fullNumber.charAt(0) == '0') {
+            if (fullNumber.charAt(0) == '+') {
                 firstDigit = 1;
             } else {
                 firstDigit = 0;

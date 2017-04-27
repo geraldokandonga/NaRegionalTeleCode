@@ -173,7 +173,7 @@ import java.util.List;
                 textView_name.setVisibility(View.VISIBLE);
                 textView_code.setVisibility(View.VISIBLE);
                 textView_name.setText(region.getName() + " (" + region.getNameCode().toUpperCase() + ")");
-                textView_code.setText("+" + region.getPhoneCode());
+                textView_code.setText("0" + region.getPhoneCode());
             }else{
                 divider.setVisibility(View.VISIBLE);
                 textView_name.setVisibility(View.GONE);

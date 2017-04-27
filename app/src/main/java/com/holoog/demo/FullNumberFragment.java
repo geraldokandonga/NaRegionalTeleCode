@@ -82,7 +82,7 @@ public class FullNumberFragment extends Fragment {
         buttonGetNumberWithPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editTextGetFullNumber.setText(nrtcGetNumber.getFullNumberWithPlus());
+                editTextGetFullNumber.setText(nrtcGetNumber.getFullNumberWithZero());
             }
         });
 

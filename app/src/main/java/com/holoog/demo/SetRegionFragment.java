@@ -113,7 +113,7 @@ public class SetRegionFragment extends Fragment {
         nrtc.setOnRegionChangeListener(new RegionCodePicker.OnRegionChangeListener() {
             @Override
             public void onRegionSelected() {
-                Toast.makeText(getContext(), "This is from OnRegionChangeListener. \n Region updated to " + nrtc.getSelectedRegionName() + "(" + nrtc.getSelectedRegionCodeWithPlus() + ")", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "This is from OnRegionChangeListener. \n Region updated to " + nrtc.getSelectedRegionName() + "(" + nrtc.getSelectedRegionCodeWithZero() + ")", Toast.LENGTH_SHORT).show();
             }
         });
     }

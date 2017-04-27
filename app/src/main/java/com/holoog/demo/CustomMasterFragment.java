@@ -50,10 +50,10 @@ public class CustomMasterFragment extends Fragment {
         buttonSetCustomMaster.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String customMasterCountries;
+                String customMasterRegions;
                 try {
-                    customMasterCountries = editTextCountryCustomMaster.getText().toString();
-                    nrtc.setCustomMasterRegions(customMasterCountries);
+                    customMasterRegions = editTextCountryCustomMaster.getText().toString();
+                    nrtc.setCustomMasterRegions(customMasterRegions);
                     Toast.makeText(getActivity(), "Master list has been changed. Tap on nrtc to see the changes.", Toast.LENGTH_LONG).show();
                 } catch (Exception ex) {
 
