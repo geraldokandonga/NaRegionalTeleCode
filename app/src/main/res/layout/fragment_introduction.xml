@@ -25,7 +25,7 @@
 
                 <TextView
                     style="@style/pointText"
-                    android:text="\u2022 Region Code Picker (NRTC) is an android library which provides easy way to search and select region code for the telephone number." />
+                    android:text="\u2022 Region Code Picker (NRTC) is an android library which provides easy way to search and select region code for the telephone number codes." />
 
                 <TextView
                     style="@style/pointText"
